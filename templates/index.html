@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Project</title>
+</head>
+<body>
+
+    <div>
+    <h1>Diabetes Prediction Project</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+        Number of Pregnancies: <input type="text" name="Pregnancies" id="Pregnancies" placeholder="Pregnancies">
+        <br> <br>
+        Glucose Level: <input type="text" name="Glucose" id="Glucose" placeholder="Glucose">
+        <br> <br>
+        Blood Pressure: <input type="text" name="Blood" id="Blood" placeholder="Blood">
+        <br> <br>
+        Skin Thickness: <input type="text" name="Skin" id="Skin" placeholder="Skin">
+        <br> <br>
+        Insulin Level: <input type="text" name="Insulin" id="Insulin" placeholder="Insulin">
+        <br> <br>
+        Body Mass Index: <input type="text" name="bmi" id="bmi" placeholder="bmi">
+        <br> <br>
+        Diabetes Pedigree Function: <input type="text" name="PedigreeFunction" id="PedigreeFunction" placeholder="PedigreeFunction">
+        <br> <br>
+        Age: <input type="text" name="age" id="age" placeholder="Age">
+        <br> <br>
+        <button type="submit">Predict</button>
+
+    </form>
+    <br><br>
+    {{pred}}
+</div>
+</body>
+</html>
