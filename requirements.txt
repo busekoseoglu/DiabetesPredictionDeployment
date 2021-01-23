@@ -1,5 +1,5 @@
 flask
-gunicorn
+qunicorn
 pandas
 numpy
 sklearn
