@@ -11,18 +11,22 @@ def home():
 
 @app.route("/predict",methods=["POST"])
 def predict():
-    features = [str(x) for x in request.form.values()]
+    features = []
+    for x in request.form.values():
+        features.append(x)
 
-    
-        
+    for col in features:
+        if col == "":
+            return render_template('index.html',pred='You have to fill all *')
+        else:
+            
+            final_features = [np.array(features)]
+            prediction = model.predict_proba(final_features)
 
-    final_features = [np.array(features)]
-    prediction = model.predict_proba(final_features)
-
-    output='{0:.{1}f}'.format(prediction[0][1], 2)
+            output='{0:.{1}f}'.format(prediction[0][0], 2)
 
 
-    return render_template('index.html',pred='Your probability of diabetes is % {}'.format(str(float(output)*100)))
+            return render_template('index.html',pred='Your probability of diabetes is % {}'.format(str(float(output)*100)))
 
 if __name__ == "__main__":
     app.run(debug=True)
