@@ -24,3 +24,5 @@ Created a form for take the inputs from user.
 
 ## Heroku
 Procfile, runtime.txt and requirements.txt ara necessary for heroku.
+
+## You can find the project here : [Diabetes Prediction Heroku](https://diabetes-prediction-pro.herokuapp.com) 
